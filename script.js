@@ -48,6 +48,7 @@ class DealManager {
             stage: formData.get('stage'),
             probability: parseInt(formData.get('probability')),
             closeDate: formData.get('closeDate'),
+            location: formData.get('location'),
             createdAt: new Date().toISOString()
         };
 
@@ -70,7 +71,7 @@ class DealManager {
     validateDeal(deal) {
         if (!deal.title || !deal.value || !deal.stage || 
             deal.probability === null || deal.probability === undefined || 
-            !deal.closeDate) {
+            !deal.closeDate || !deal.location) {
             alert('Please fill in all required fields');
             return false;
         }
@@ -150,6 +151,11 @@ class DealManager {
                     <div class="deal-detail">
                         <i class="fas fa-clock"></i>
                         <span>Close: ${formattedDate}</span>
+                    </div>
+                    
+                    <div class="deal-detail">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>${this.escapeHtml(deal.location)}</span>
                     </div>
                 </div>
                 

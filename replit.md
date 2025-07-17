@@ -41,6 +41,7 @@ Preferred communication style: Simple, everyday language.
   - `stage`: Sales pipeline stage
   - `probability`: Success probability (integer)
   - `closeDate`: Expected close date
+  - `location`: Geographic location/region (string)
 
 ### 3. UI Components
 - **Hero Section**: Branded header with gradient background
